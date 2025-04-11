@@ -1,0 +1,590 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Translation Services - Professional Language Solutions</title>
+    <!-- Bootstrap 5 CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <style>
+        /* Custom Styles */
+        :root {
+            --primary-blue: #1a237e;
+            --primary-yellow: #ffc107;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+        }
+        
+        /* Header Top */
+        .header-top {
+            background-color: var(--primary-blue);
+            font-size: 0.9rem;
+            padding: 8px 0;
+        }
+        
+        /* Navigation */
+        .navbar-brand {
+            font-size: 1.8rem;
+        }
+        
+        .nav-link {
+            font-weight: 500;
+            padding: 0.5rem 1rem;
+        }
+        
+        /* Hero Section */
+        .hero-section {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), 
+                        url('https://images.unsplash.com/photo-1522071820081-009f0129c71c?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1470&q=80') no-repeat center center;
+            background-size: cover;
+            min-height: 500px;
+            color: white;
+            display: flex;
+            align-items: center;
+        }
+        
+        .translation-globe {
+            width: 300px;
+            height: 300px;
+            border-radius: 50%;
+            background-color: var(--primary-yellow);
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto;
+            color: var(--primary-blue);
+            font-weight: bold;
+            font-size: 1.5rem;
+            text-align: center;
+            padding: 20px;
+            box-shadow: 0 0 20px rgba(0, 0, 0, 0.3);
+        }
+        
+        /* Services */
+        .service-card {
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            border-radius: 10px;
+            height: 100%;
+            padding: 20px;
+            border: 1px solid #eee;
+        }
+        
+        .service-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 10px 20px rgba(0, 0, 0, 0.1);
+        }
+        
+        .service-icon {
+            width: 80px;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary-yellow);
+            border-radius: 50%;
+            margin: 0 auto 15px;
+        }
+        
+        /* Quote Form */
+        .quote-title {
+            background-color: var(--primary-yellow);
+            padding: 15px;
+            margin-bottom: 20px;
+        }
+        
+        .quote-form-container {
+            background-color: rgba(13, 110, 253, 0.1);
+            padding: 30px;
+            border-radius: 5px;
+        }
+        
+        /* Testimonials */
+        .testimonial-content {
+            max-width: 800px;
+            margin: 0 auto;
+        }
+        
+        .dot {
+            display: inline-block;
+            width: 12px;
+            height: 12px;
+            border-radius: 50%;
+            background-color: #bbb;
+            margin: 0 5px;
+            cursor: pointer;
+        }
+        
+        .dot.active {
+            background-color: var(--primary-yellow);
+        }
+        
+        /* Footer */
+        footer {
+            background-color: var(--primary-blue);
+            color: white;
+            padding: 50px 0 0;
+        }
+        
+        .footer-bottom {
+            background-color: rgba(0, 0, 0, 0.2);
+            padding: 15px 0;
+        }
+        
+        .social-icons a {
+            display: inline-block;
+            width: 36px;
+            height: 36px;
+            border-radius: 50%;
+            background-color: rgba(255, 255, 255, 0.1);
+            text-align: center;
+            line-height: 36px;
+            transition: background-color 0.3s ease;
+            color: white;
+            margin-right: 10px;
+        }
+        
+        .social-icons a:hover {
+            background-color: var(--primary-yellow);
+            color: var(--primary-blue);
+        }
+        
+        /* Button Hover Effects */
+        .btn-warning:hover {
+            background-color: #e0a800;
+            border-color: #d39e00;
+        }
+        
+        .btn-outline-light:hover {
+            background-color: rgba(255, 255, 255, 0.1);
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            .header-top .col-md-6 {
+                text-align: center !important;
+                margin-bottom: 0.5rem;
+            }
+            
+            .translation-globe {
+                width: 200px;
+                height: 200px;
+                margin-top: 2rem;
+            }
+            
+            .hero-section {
+                text-align: center;
+                padding: 60px 0;
+            }
+            
+            .navbar-nav {
+                margin-top: 15px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header Top (Info Bar) -->
+    <div class="header-top">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6">
+                    <span class="text-white me-3"><i class="fas fa-envelope me-1"></i> info@companyname.com</span>
+                    <span class="text-white"><i class="fas fa-phone me-1"></i> 281-531-0008</span>
+                </div>
+                <div class="col-md-6 text-md-end text-center">
+                    <a href="#" class="text-white text-decoration-none me-3">Careers</a>
+                    <a href="#" class="text-white text-decoration-none me-3">Help</a>
+                    <a href="#" class="text-white text-decoration-none me-3">Login</a>
+                    <a href="#" class="text-white text-decoration-none">Signup</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav class="navbar navbar-expand-lg navbar-light bg-white shadow-sm">
+        <div class="container">
+            <a class="navbar-brand fw-bold" href="#">
+                <span class="text-warning">LOGO</span> <span class="text-primary">HERE</span>
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarSupportedContent">
+                <ul class="navbar-nav me-auto mb-2 mb-lg-0">
+                    <li class="nav-item"><a class="nav-link" href="#">Home</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">About Us</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Services</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Our Solutions</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Blog</a></li>
+                    <li class="nav-item"><a class="nav-link" href="#">Contact Us</a></li>
+                </ul>
+                <form class="d-flex me-3 mb-3 mb-lg-0">
+                    <input class="form-control me-2" type="search" placeholder="Search...">
+                </form>
+                <button class="btn btn-warning fw-bold">Translate Now</button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero-section">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-lg-6 py-5">
+                    <p class="display-4 fw-bold">$ 40.00 <small class="fs-5">Per Certificate</small></p>
+                    <h1 class="display-5 fw-bold mb-4">High Quality Translation services delivered worldwide</h1>
+                    <button class="btn btn-outline-light btn-lg">Learn More</button>
+                </div>
+                <div class="col-lg-6 text-center py-5">
+                    <div class="translation-globe">
+                        <span>Translation Services</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Skills Section Title -->
+    <section class="py-4 bg-light">
+        <div class="container text-center">
+            <h2 class="fw-bold text-uppercase m-0">WE HAVE THE SKILLS FOR ANY LANGUAGE ANY INDUSTRY</h2>
+        </div>
+    </section>
+
+    <!-- Services Grid -->
+    <section class="py-5">
+        <div class="container">
+            <div class="row g-4">
+                <!-- Service 1 -->
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-file-certificate fa-2x text-white"></i>
+                        </div>
+                        <h3>Certified Translations</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 2 -->
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-globe-americas fa-2x text-white"></i>
+                        </div>
+                        <h3>Localization</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 3 -->
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-user-tie fa-2x text-white"></i>
+                        </div>
+                        <h3>Professional Interpretation</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 4 -->
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-chalkboard-teacher fa-2x text-white"></i>
+                        </div>
+                        <h3>Corporate Language Training</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 5 -->
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-cogs fa-2x text-white"></i>
+                        </div>
+                        <h3>Technical Translations</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 6 -->
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-headphones fa-2x text-white"></i>
+                        </div>
+                        <h3>Transcription</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 7 -->
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-laptop-code fa-2x text-white"></i>
+                        </div>
+                        <h3>Website Translations</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 8 -->
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-briefcase fa-2x text-white"></i>
+                        </div>
+                        <h3>Commercial Translations</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                    </div>
+                </div>
+                
+                <!-- Service 9 -->
+                <div class="col-md-4">
+                    <div class="service-card text-center">
+                        <div class="service-icon">
+                            <i class="fas fa-language fa-2x text-white"></i>
+                        </div>
+                        <h3>Legal Translations</h3>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris.</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Quote Form Section -->
+    <section class="py-5">
+        <div class="container">
+            <div class="quote-title text-center rounded">
+                <h3 class="fw-bold m-0">FOR A FAST AND FREE QUOTE, PLEASE PROVIDE THE FOLLOWING</h3>
+            </div>
+            <div class="quote-form-container mt-4">
+                <form>
+                    <div class="row g-3">
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Name" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="text" class="form-control" placeholder="Company Name">
+                        </div>
+                        <div class="col-md-6">
+                            <input type="email" class="form-control" placeholder="Email" required>
+                        </div>
+                        <div class="col-md-6">
+                            <input type="tel" class="form-control" placeholder="Phone" required>
+                        </div>
+                        <div class="col-12">
+                            <input type="text" class="form-control" placeholder="Address (if mailing)">
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-select" required>
+                                <option value="" selected disabled>Source Language</option>
+                                <option>English</option>
+                                <option>Spanish</option>
+                                <option>French</option>
+                                <option>German</option>
+                                <option>Chinese</option>
+                            </select>
+                        </div>
+                        <div class="col-md-6">
+                            <select class="form-select" required>
+                                <option value="" selected disabled>Target Language</option>
+                                <option>English</option>
+                                <option>Spanish</option>
+                                <option>French</option>
+                                <option>German</option>
+                                <option>Chinese</option>
+                            </select>
+                        </div>
+                        <div class="col-12">
+                            <textarea class="form-control" rows="4" placeholder="Project Description" required></textarea>
+                        </div>
+                        <div class="col-md-6">
+                            <label for="file1" class="form-label">Upload File 1</label>
+                            <input type="file" class="form-control" id="file1">
+                        </div>
+                        <div class="col-md-6">
+                            <label for="file2" class="form-label">Upload File 2</label>
+                            <input type="file" class="form-control" id="file2">
+                        </div>
+                        <div class="col-12">
+                            <button type="button" class="btn btn-primary" id="addMoreFiles">Add More Files</button>
+                        </div>
+                        <div class="col-12 text-center mt-3">
+                            <button type="submit" class="btn btn-warning btn-lg fw-bold px-5">Submit and Receive your quote in same day</button>
+                        </div>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+
+    <!-- Testimonials Section -->
+    <section class="py-5 bg-light">
+        <div class="container text-center">
+            <h2 class="mb-5">Our Customers Love Us</h2>
+            <div class="testimonial-content mb-4">
+                <p class="lead">"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula. Sed auctor neque eu tellus rhoncus ut eleifend nibh porttitor."</p>
+                <p class="fw-bold">JOS CHAVEZ</p>
+            </div>
+            <div class="testimonial-dots">
+                <span class="dot active"></span>
+                <span class="dot"></span>
+                <span class="dot"></span>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer Section -->
+    <footer>
+        <div class="container">
+            <div class="row">
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase mb-4">Quick Links</h5>
+                    <ul class="list-unstyled">
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Home</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">About Us</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Services</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Our Solutions</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Blog</a></li>
+                        <li class="mb-2"><a href="#" class="text-white text-decoration-none">Contact Us</a></li>
+                    </ul>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase mb-4">Industries</h5>
+                    <div class="row">
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Automotive</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Technology</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Legal</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Banking</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Government</a></li>
+                            </ul>
+                        </div>
+                        <div class="col-6">
+                            <ul class="list-unstyled">
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Hospitality</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Retail</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Sports and Entertainment</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Life Sciences</a></li>
+                                <li class="mb-2"><a href="#" class="text-white text-decoration-none">Manufacturing</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase mb-4">Newsletter</h5>
+                    <p>Subscribe to our newsletter for the latest updates.</p>
+                    <div class="input-group mb-3">
+                        <input type="email" class="form-control" placeholder="Your Email">
+                        <button class="btn btn-warning" type="button">Subscribe</button>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-6 mb-4">
+                    <h5 class="text-uppercase mb-4">Contact Info</h5>
+                    <p><i class="fas fa-phone me-2"></i> 123-531-0000</p>
+                    <p><i class="fas fa-envelope me-2"></i> hello@companyname.com</p>
+                    <p><i class="fas fa-map-marker-alt me-2"></i> 12121 Lorem Ipsum Rd. Ste. 127, Lorem, TX 77077</p>
+                    <div class="social-icons mt-4">
+                        <a href="#" class="me-2"><i class="fab fa-facebook-f"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-twitter"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-linkedin-in"></i></a>
+                        <a href="#" class="me-2"><i class="fab fa-youtube"></i></a>
+                        <a href="#"><i class="fab fa-instagram"></i></a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Footer Bottom Bar -->
+    <div class="footer-bottom">
+        <div class="container">
+            <div class="row align-items-center">
+                <div class="col-md-6 text-center text-md-start">
+                    <p class="mb-0 text-white">Copyright © 2020. companyname.com. All right reserved.</p>
+                </div>
+                <div class="col-md-6 text-center text-md-end">
+                    <a href="#" class="text-white text-decoration-none me-3">Terms and Conditions</a>
+                    <a href="#" class="text-white text-decoration-none me-3">Privacy Policy</a>
+                    <a href="#" class="text-white text-decoration-none me-3">Site Map</a>
+                    <a href="#" class="text-white text-decoration-none">Terms of Use</a>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Testimonial carousel functionality
+            const dots = document.querySelectorAll('.dot');
+            const testimonials = [
+                {
+                    text: '"Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam in dui mauris. Vivamus hendrerit arcu sed erat molestie vehicula."',
+                    author: "JOS CHAVEZ"
+                },
+                {
+                    text: '"The translation services were exceptional. Our documents were processed quickly and accurately, with great attention to detail."',
+                    author: "MARIA GARCIA"
+                },
+                {
+                    text: '"We\'ve used their services for multiple projects and they consistently deliver high-quality translations on time."',
+                    author: "DAVID WILSON"
+                }
+            ];
+            
+            const testimonialContent = document.querySelector('.testimonial-content p');
+            const testimonialAuthor = document.querySelector('.testimonial-content .fw-bold');
+            
+            dots.forEach((dot, index) => {
+                dot.addEventListener('click', function() {
+                    // Update active dot
+                    dots.forEach(d => d.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update testimonial content
+                    testimonialContent.textContent = testimonials[index].text;
+                    testimonialAuthor.textContent = testimonials[index].author;
+                });
+            });
+            
+            // File upload functionality
+            const addMoreBtn = document.getElementById('addMoreFiles');
+            const fileUploadContainer = document.querySelector('.row.g-3');
+            let fileCount = 2;
+            
+            addMoreBtn.addEventListener('click', function() {
+                fileCount++;
+                const newFileDiv = document.createElement('div');
+                newFileDiv.className = 'col-md-6';
+                newFileDiv.innerHTML = `
+                    <label for="file${fileCount}" class="form-label">Upload File ${fileCount}</label>
+                    <input type="file" class="form-control" id="file${fileCount}">
+                `;
+                fileUploadContainer.insertBefore(newFileDiv, addMoreBtn.parentElement);
+            });
+            
+            // Form submission
+            const quoteForm = document.querySelector('form');
+            quoteForm.addEventListener('submit', function(e) {
+                e.preventDefault();
+                alert('Thank you for your submission! We will contact you shortly with your quote.');
+                this.reset();
+            });
+        });
+    </script>
+</body>
+</html>
